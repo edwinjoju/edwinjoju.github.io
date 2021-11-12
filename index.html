@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Department of CS</title>
+        <link rel = "icon" href = 
+        "https://media-exp1.licdn.com/dms/image/C4D0BAQF_E24twcbW2g/company-logo_200_200/0/1519917489399?e=2159024400&v=beta&t=CRV-GBOONk19wLJmfXdHaY9jO008gpcQa_H9O5AEsu0" 
+                type = "image/x-icon">
+        
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styleh.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                scroll-behavior: smooth;
+            } 
+                
+            body{
+                height:100%;
+                background:linear-gradient(45deg, #a5e0d8, #6c9adf);
+                }
+            .bg{
+                background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+                }
+
+            nav{
+                height:80px;
+                width:100%;
+                display: flex;
+                font-family: 'Montserrat', sans-serif;
+                }
+            .logo{
+                width: 50%;
+                height: 100px;
+                }
+            .logo a img{
+                line-height:70px;
+                padding-left: 30px;
+                height:75px;  
+                }
+            .menu{
+                height:100px;
+                width:50%;
+                }
+            .menu ul{
+                height:80px;
+                width:100%;
+                display:flex;
+                flex-direction:row;
+                justify-content:space-around;
+                align-items: center;    
+                }
+            .menu ul li{
+                list-style: none;
+                font-size: 20px;
+                font-weight: bold;    
+                }
+            .menu ul li a{
+                text-decoration:none;
+                color:white;
+                }
+            .menu ul li a:hover{
+                 background:linear-gradient(57deg, #1e4d92, #00c6a7);
+                border-radius: 90px;
+                padding:5px 15px;
+                transition:0.8s ease;
+                text-decoration: underline;
+                font-family: 'Proza Libre', sans-serif;
+                color:white;  
+                }
+            .menu ul li a:active{
+                color:coral; 
+                } 
+            section{
+                display:flex;
+                }
+            .left{
+                height:auto;
+                width:50%;
+                margin-top: 20px;
+                }
+            .left img{
+                width: 700px;
+                height: 530px;
+                padding:10px;
+                border: 3px solid white;
+                border-radius: 23px;
+                margin-left: 10px;
+                box-shadow: 5px 3px 5px 5px #888888;
+                }
+            .right{
+                width:50%;
+                text-align:justify;
+                padding:0px 30px 10px 10px;
+                color:white;               
+                }
+            .right h1{
+                font-size: 35px;
+                font-weight: 900;
+                text-align: center;
+                padding: 3px;
+                font-family: 'Raleway', sans-serif;
+                border-bottom: 2px solid;
+                text-shadow: 2px 3px grey;    
+                }
+            .program ul li{
+                margin-left: 10px;
+                margin-right: 10px;
+                }
+            .right .program{
+                background:linear-gradient(57deg, #1e4d92, #00c6a7);
+                padding: 20px;
+                border: 0.5px transparent;
+                border-radius: 10px;
+                box-shadow: 5px 3px 5px 5px #888888;
+                color:white;
+                }
+            h2{
+                margin-left: 20%;
+                margin-right:20%;
+                padding-bottom: 01px;
+                }
+
+            .program h2{
+                text-align: center;
+                text-transform: uppercase;
+                font-family: 'Raleway', sans-serif;
+                border-bottom: 2px solid white;
+                margin-bottom: 10px;
+                }
+            .program p{
+                text-align: center;
+                }
+            .motto{
+                font-size: 19px;
+                font-family: 'Raleway', sans-serif;
+                margin-bottom: 10px;
+                }
+            .motto b{
+                font-size: 20px;
+                font-family:monospace;
+                }
+            .program .vision{
+                font-family: 'Raleway', sans-serif;
+                font-size: 18px;
+                margin-bottom: 10px;
+                }
+            ul li{
+                font-size: 15px;
+                font-family: 'Raleway', sans-serif;    
+                }
+            span{
+                color:turquoise; 
+                }  
+            .mission{
+                display: none;  
+                }
+            span:hover + .mission{
+                display: block; 
+                color: white;   
+                }
+            span h2:hover{
+                color:white;
+                }
+            .core{
+                display: none;  
+                }
+            span:hover + .core{
+                display: block;
+                color:white;
+                }
+        </style>
+
+    </head>
+    <body>
+         <nav class="bg">
+            <div class="logo"><a title="St Thomas Official Website" href="https://stthomas.ac.in/" target="blank"><img src="https://stthomas.ac.in/wp-content/uploads/2020/05/NEW-LOGO-STC1.png" alt=""></a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a  title="Homepage" href="index.html">HOME</a></li>
+                        <li><a title="About Department" href="About.html">ABOUT</a></li>
+                        <li><a title="Faculty Members" href="faculty.html">FACULTY</a></li>
+                        <li><a title="Course Syllabus" href="Syllabus.html">SYLLABUS</a></li>
+                    </ul>
+                </div>
+        </nav>
+                <br><br>
+        <section>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Faculty Members</title>
+    <link rel = "icon" href = 
+    "https://media-exp1.licdn.com/dms/image/C4D0BAQF_E24twcbW2g/company-logo_200_200/0/1519917489399?e=2159024400&v=beta&t=CRV-GBOONk19wLJmfXdHaY9jO008gpcQa_H9O5AEsu0" 
+            type = "image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylefac.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    
+    <style>
+*
+{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.site-header{
+      
+     width: 100%;
+     background:linear-gradient(90deg, #a5e0d8, #6c9adf);
+}
+.bg{
+    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+}
+nav{
+    height:80px;
+    width:100%;
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+}
+.logo{
+    height:100px;
+    width:50%;
+    padding-left:30px;
+}
+.logo a img{
+    height:75px;
+    line-height:70px;
+    float: left;
+}
+.menu{
+    height:100px;
+    width:50%;
+}
+.menu ul{
+    height:80px;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+.menu ul li{
+    list-style-type:none;
+    font-size:20px;
+    font-weight: bold;
+}
+.menu ul li a{
+    text-decoration: none;
+    color:white;
+}
+.menu ul li a:hover{
+    background:linear-gradient(57deg, #1e4d92, #00c6a7); 
+    border-radius: 30px;
+    padding:5px 15px;
+    transition:0.8s ease;
+    text-decoration: underline;
+    font-family: 'Proza Libre', sans-serif;
+}
+.menu ul li a:active{
+    color:crimson;
+}
+.head{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.head h1{
+    text-align: center;
+    border-bottom: 5px solid white;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 30px;
+    font-size: 34px; 
+    font-family:century gothic;
+    text-shadow: 2px 3px grey;
+}
+section{
+    margin-left: 50px;
+    margin-top: 10px;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.2;
+    
+}
+.topbox{
+    display:flex;
+    transition: 1s ease;
+}
+.bot1{
+    display: flex;
+    float:left;
+    border: 0.5px transparent;
+    height: auto;
+    width: 50%;
+    padding:15px;
+    margin-left: 50px;
+    margin-right: 150px;
+    border-radius: 6px;
+    background:linear-gradient(57deg, #1e4d92, #00c6a7);
+    box-shadow: 5px 3px 5px 5px #888888;
+    
+}
+.bot1:hover{
+    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    font:bold;
+}
+.showdetail{
+    display:none;
+    font-size:15px;
+}
+.viewmore{
+    margin-top: 25px;
+}
+span.viewmore{
+    text-decoration: underline;
+    color:#00c6a7;
+    line-break: 2px;
+}
+span.viewmore:hover + .showdetail{
+    display: block; 
+    color: white;
+}
+
+.bot1 img{
+    border-radius: 5px;
+}
+.bot1 dl{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.bot2{
+    display: flex;
+    float:right;
+    height: auto;
+    border: 0.5px transparent;
+    width: 50%;
+    padding:15px;
+    margin-right: 150px;
+    border-radius: 6px;
+    background:linear-gradient(57deg, #1e4d92, #00c6a7);
+    box-shadow: 5px 3px 5px 5px #888888;
+}
+.bot2:hover{
+    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    transition:1s ease;
+}
+
+.bot2 img{
+    border-radius: 5px;
+}
+.bot2 dl{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.bottombox{
+    display: flex;
+    padding-bottom: 10px;
+}
+.bot3 {
+    display:flex;
+    float:left;
+    border: 0.5px transparent;
+    width: 50%;
+    padding:15px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-right:150px;
+    border-radius: 6px;
+    background:linear-gradient(57deg, #1e4d92, #00c6a7);
+    box-shadow: 5px 3px 5px 5px #888888;
+}
+.bot3:hover{
+    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    transition:1s ease;
+}
+.bot3 img{
+    border-radius: 5px;
+}
+.bot3 dl{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.bot4{
+    display:flex;
+    float:right;
+    border: 0.5px transparent;
+    width: 50%;
+    padding:15px;
+    margin-right: 150px;
+    margin-top: 30px;
+    border-radius: 6px;
+    background:linear-gradient(57deg, #1e4d92, #00c6a7);
+    box-shadow: 5px 3px 5px 5px #888888;
+}
+.bot4:hover{
+    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    transition:1s ease;
+    border: 2px solid turquoise
+}
+.bot4 img{
+    border-radius: 5px;
+}
+.bot4 dl{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.clgaddress {
+    background:linear-gradient(57deg,#1e4d92 ,#00c6a7 );
+    color: white;
+   
+}
+
+
+.address{
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+small{
+    font-size:15
+    px;
+    line-height:1.4;
+    font-family: serif;
+}
+small a:hover{
+    color:crimson;
+}
+.address h3{
+    font-family: Fjalla One, Arial, Helvetica, sans-serif;
+    margin-bottom:15px;
+}
+.address a{
+    text-decoration: none;
+    color:white;
+}
+.top{
+    margin-left: 20px;
+}
+.arrow{
+    margin-left: 90%;
+}
+.arrow a{
+    text-decoration: none;
+   color: white;
+}
+.arrow a b{
+    color: white;
+    background-color: #f6007b;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    opacity: 0.7;
+ }
+
+.arrow a b:hover{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));
+    transition:0.8s ease;
+    opacity: 1;
+ }
+    </style>
+
+</head>
+<body id="introduction"class="site-header">
+    <header  class="site-header">
+    <nav class="bg">
+        <div class="logo">
+            <a href="home.html"><img title="Go to Home Page" src="https://stthomas.ac.in/wp-content/uploads/2020/05/NEW-LOGO-STC1.png" alt="STC Logo"></a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="faculty.html">FACULTY</a></li>
+                <li><a href="syllabus.html">SYLLABUS</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <section >
+            <div class="head"> <h1> Faculty Members</h1></div>
+            <section class="topbox">
+            <div class="bot1">
+                <img src="https://stthomas.ac.in/wp-content/uploads/2020/03/c217.jpg" height="200px"; alt="Dr. Jiju A. Mathew">
+                <dl>
+                    <dt><strong style="font-family:century gothic;">Dr. Jiju A. Mathew</strong>, MSc.,Ph.D.</dt>
+                    <dd><i >Assistant Professor &  HOD</i></dd>
+                    <br>
+                    <span class="viewmore">View more</span>
+                    <div class="showdetail">
+                        <b>Address</b>
+                        <address>
+                            Marukummoottil House <br>
+                            Greenland Nagar <br>
+                            Villadom, Ramavarmapuram PO, <br>
+                            Thrissur -<span style="font-family: 'Courier New', Courier, monospace;">680 631</span>>, Kerala <br>
+                        </address>
+                        <br>
+                        <b>Email : </b><i> jijuamathew@stthomas.ac.in
+
+                        </i>
+                    </div>
+                </dl>
+            </div>
+                <br>
+            <div class="bot2">
+                <img src="https://stthomas.ac.in/wp-content/uploads/2020/03/c219.jpg" height="200px" alt="Dr. Sunil Sunny Chalakkal">
+                <dl>
+                    <dt><strong style="font-family:century gothic;">Dr. Sunil Sunny Chalakkal</strong>, MCA, M.phil, Ph.D</dt>
+                    <dd><i> Assistant Professor</i> </dd>
+                    <br>
+                    <span class="viewmore">View more</span>
+                    <div class="showdetail">
+                        <b>Address</b>
+                        <address>
+                            Chalakkal (H) ,Velur. P. O, Thrissur <br>
+                            680601 <br>
+                            Contact : <span style="font-family: 'Courier New', Courier, monospace;">+91 94951 68905</span> <br>
+                        </address>
+                        <br>
+                        <b>Email : </b><i>sunilcsunny@yahoo.com</i>
+                    </div>
+                </dl>
+            </div>
+            </section>
+            <br>
+            <section class="bottombox">
+            <div class="bot3">
+                <img src="https://stthomas.ac.in/wp-content/uploads/2020/03/c218.jpg" height="200px" alt="Mrs.Rameela Ravindran K">
+                <dl>
+                    <dt><strong style="font-family:century gothic;">Mrs.Rameela Ravindran K</strong> MCA</dt>
+                    <dd><i>Assistant Professor </i> </dd> <br>
+                    <span class="viewmore">View more</span>
+                    <div class="showdetail">
+                        <b>Address</b>
+                        <address>
+                            Apartment 102 “Nandana”, Haritha Gardens,<br>
+                            PO Vadookara, Thrissur <span style="font-family: 'Courier New', Courier, monospace;">680007</span>>
+                        </address>
+                        <br>
+                        <b>Email : </b><i> k.rameela@gmail.com</i>
+                    </div>
+                </dl>
+            </div>
+         
+            <br><br>
+        
+            <div class="bot4">
+                <img src="https://stthomas.ac.in/wp-content/uploads/2020/03/c220.jpg" height="200px" alt="Dr. Fr. Anil George K CMI">
+                <dl>
+                    <dt><strong style="font-family:century gothic;">Dr. Fr. Anil George K CMI</strong> , M.Sc, Ph.D</dt>
+                    <dd><i>Assistant Professor </i> </dd> <br>
+                    <span class="viewmore">View more</span>
+                    <div class="showdetail">
+                        <b>Address</b>
+                        <address>
+                            Devamatha Provincial House , patturaikkal <br>
+                            Thrissur – 22, Kerala, India
+                        </address>
+                        <br>
+                        <b>Email : </b><i>anilkonkoth@gmail.com</i>
+                    </div>
+                </dl>
+            </div>
+        </section>
+    </section>
+    <br>
+</header>
+<div class="clgaddress">
+    <hr size=3 width="100%" color="black">
+    <br>
+    <div class="address">
+        <h3>GET IN TOUCH WITH US!</h3> 
+        <small>St.Thomas' College (Autonomous) <br>
+        Thrissur - 680 001, Kerala, India<br>
+        Phone: +91 487 2420 435<br>
+        Email : <a href="mailto:principal@stthomas.ac.in">principal@stthomas.ac.in</a><br>
+        Web: <a href="https://stthomas.ac.in/" target="blank">www.stthomas.ac.in </a>
+        </small>
+        <br><br>
+    </div>
+   
+     <br>
+    <div class="top">
+       
+        <h3>GET SOCIAL ! </h3>
+        
+        <div class="media">
+            <a href="https://www.facebook.com/stthomascollegeautonomous/" target="_blank">
+                <img src="https://img.icons8.com/dusk/64/000000/facebook-new--v2.png"  width="20" height="20"> </a>
+                &nbsp;&nbsp;
+            <a href="https://mobile.twitter.com/stkerala" target="_blank">
+                <img src="https://img.icons8.com/offices/30/000000/twitter.png" width="20" height="20"></a>
+                &nbsp;&nbsp;
+            <a href="https://instagram.com/st.thomascollege?igshid=wdtnpo8oaebm" target="_blank">
+                <img src="https://img.icons8.com/offices/30/000000/instagram-new.png" width="20" height="20"></a>
+                &nbsp;&nbsp;
+            <a href="https://youtube.com/channel/UCyEt1zEHocBNw6ZzQefn4kQ" target="_blank">
+                <img src="https://img.icons8.com/doodle/48/000000/youtube-play--v2.png" width="20" height="20"></a>
+                &nbsp;&nbsp;
+        </div>    
+        
+        
+        <div class="arrow">
+        <a href="#introduction" title="Go up" style="font-size:30px">
+            <b>^</b>
+        </a>
+    </div>
+    </div>
+</div>
+</body>
+</html>

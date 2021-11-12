@@ -1,0 +1,379 @@
+<html>
+    <head>
+        <title>About Department</title>
+        <link rel = "icon" href = 
+        "https://media-exp1.licdn.com/dms/image/C4D0BAQF_E24twcbW2g/company-logo_200_200/0/1519917489399?e=2159024400&v=beta&t=CRV-GBOONk19wLJmfXdHaY9jO008gpcQa_H9O5AEsu0" 
+                type = "image/x-icon">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+            <link rel="stylesheet" href="styleabout.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+            <style>
+                *{
+   
+   padding:0;
+   margin:0;
+   scroll-behavior: smooth;  
+}
+.site-header{
+   width:100%;
+   background:linear-gradient(57deg, #a5e0d8, #6c9adf);
+}
+.bg{
+   background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+}
+nav{
+   height:80px;
+   width:100%;
+   display: flex;
+   font-family: 'Montserrat', sans-serif;
+}
+.logo {
+   width: 50%;
+   height: 100px;
+   padding-left: 30px;
+}
+.logo a img{
+   line-height:70px;
+   height:75px;
+   float: left;
+}
+.menu{
+   height:100px;
+   width:50%;
+}
+.menu ul{
+   height:80px;
+   width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items: center;
+}
+.menu ul li{
+   list-style: none;
+   font-size: 20px;
+   font-weight: bold;
+}
+.menu ul li a{
+   text-decoration:none;
+   color:white;
+   border-radius: 30px;
+}
+.menu ul li a:hover{
+   background:linear-gradient(57deg, #1e4d92, #00c6a7);
+   padding:5px 15px;
+   transition:0.8s ease;
+   text-decoration: underline;
+   font-family: 'Proza Libre', sans-serif;
+}
+.menu ul li a:active{
+   color:crimson;
+}
+
+section{
+    margin-bottom: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.right{
+   height:300px;
+   text-align:center;
+   padding:40px;
+   margin-top:20px;
+   color:white;
+}
+.right h1{
+   font-size: 50px;
+   font-weight: 900;
+   font-family: 'Raleway', sans-serif;
+   text-shadow: 2px 3px grey;
+}
+.right p{
+   font-size:20px;
+   padding:10px 5px 15px 5px ;
+}
+ 
+.right  button {
+   font-weight:bold;
+   background:linear-gradient(57deg, #08ebc9, #0a51bd);
+   padding: 10px  25px;
+   border-radius: 4px;
+   color:white;
+   transition:1s ease;
+
+}
+.right a button:hover{
+   background:linear-gradient(57deg, #1e4d92,#00c6a7 );
+   transition:0.8s ease;
+   padding:10px 75px;
+   
+}
+.dep{
+    display: none; 
+    transition:1s ease; 
+    
+}
+span:hover + .dep{
+    display: inline;
+    color:white;
+    transition:1s ease;
+}
+.right .phead{
+   font-size: 50px;
+   border-bottom:2px solid white;
+   font-family:century gothic ;
+}
+.right .program{
+   background:linear-gradient(57deg, #1e4d92, #00c6a7);
+   padding: 70px 50px;;
+   border: 0.5px transparent;
+   border-radius: 10px;
+   box-shadow: 5px 3px 5px 5px #888888;
+}
+.program .pit{
+   font-size: 25px;
+   text-decoration: none;
+   color:white;
+   font-family: century gothic;
+   font-weight: 900;
+}
+
+.right .program a{
+   font-size: 25px;
+   text-decoration: none;
+   color:white;
+   font-family: century gothic;
+   font-weight: 900;
+}
+.right .program a:hover{
+   color:white;
+   border-radius: 15px;
+   padding:5px;
+}
+
+.def
+{
+   background-color:#F4F5FF;
+   margin-left: 10%;
+   margin-right: 10%;
+   border-radius: 5px;;
+   box-shadow: 8px 3px 8px 8px #888888;
+}
+
+.image{
+   margin-top:20px;
+   margin-bottom: 20px;
+   display:block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80%;
+   box-shadow: 5px 3px 5px 5px #888888;
+}
+.headcs{
+   margin-top: 100px;
+   padding:10px 10px;
+   font-size: 40px;
+   text-align: center;
+   font-family: 'Raleway', sans-serif;
+   border-radius: 0 0 50px 50px;
+   background-color: #00c6a7;
+   border-bottom:15px solid dodgerblue;
+   color:white;  
+}
+
+ 
+.description{
+   font-size:23px;
+   text-align: justify;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.4;
+}
+ 
+.lab{
+   height:400px;
+   width:45%;
+   float: left;
+   border: 1px transparent solid;
+     
+}
+.program{
+   font-size: 25px;
+   font-family: verdana;
+   transition:0.3s ease;
+}
+
+.clgaddress {
+   height:auto;
+   width:100%;
+   background:linear-gradient(57deg,#1e4d92 ,#00c6a7 );
+   color: white;
+
+}
+
+.address{
+   margin-left: 20px;
+   font-family: 'Raleway', sans-serif;
+}
+small{
+   font-size:15
+   px;
+   line-height:1.4;
+   font-family: serif;
+}
+small a:hover{
+   color:crimson;
+}
+.address h3{
+   font-family: Fjalla One, Arial, Helvetica, sans-serif;
+   margin-bottom:15px;
+}
+.address a{
+   text-decoration: none;
+   color:white;
+}
+.top{
+   margin-left: 20px;
+}
+.top h3{
+    font-family: Fjalla One, Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
+}
+.arrow{
+    margin-left: 90%;
+}
+.arrow a{
+    text-decoration: none;
+   color: white;
+}
+.arrow a b{
+    color: white;
+    background-color: #f6007b;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    opacity: 0.7;
+ }
+  
+.arrow a b:hover{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));
+    transition:0.8s ease;
+    opacity: 1;
+ }
+            </style>
+    </head>
+    <body id="introduction" class="site-header">
+       
+            <nav class="bg">
+                <div class="logo"><a href="index.html"><img title="Go to Home Page" src="https://stthomas.ac.in/wp-content/uploads/2020/05/NEW-LOGO-STC1.png" alt=""></a></div>
+                <div class="menu">
+                    <ul>
+                        <li><a  title="Homepage" href="index.html">HOME</a></li>
+                        <li><a class="active" title="About Department" href="About.html">ABOUT</a></li>
+                        <li><a title="Faculty Members" href="faculty.html">FACULTY</a></li>
+                        <li><a title="Course Syllabus" href="Syllabus.html">SYLLABUS</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <br><br>
+            <section>
+              
+                <div class="right">
+                    <h1 title="Dept of CS">DEPARTMENT OF CS</h1><br>
+                    <div class="program">
+                        <p class="phead">PROGRAM OFFERED<p>
+                        <p class="pit"> B.Sc Computer Science</p>
+                        <p  class="pit"> M.Sc Computer Science</p>
+                        <button title="About Depatment"  ><a href="#dept"><span>EXPLORE</span>
+                           <div class="dep">DEPARTMENT</div></a></button> 
+                    </div>
+                </div>
+            </section>
+        <br><br>
+         <div class="def">
+        <h2 id="dept" class="headcs">DEPARTMENT OF COMPUTER SCIENCE</h2>
+        <br>
+        <img class="image" src="https://stthomas.ac.in/wp-content/uploads/2020/04/computerscience_intro-1-800x213.jpg" alt="">
+      <div class="showcase">
+        <p  class="description">
+            The Department of Computer Science came to existence in the year 2001 as an unaided self financing department with the objective
+            of imparting quality education and accelerating nation’s economic growth by developing innovative ideas and translating them into 
+            commercial products that benefit society. The department has always produced quality professionals, holding important positions in
+            Information Technology industry in India and abroad. Over a decade, it has transformed itself into an aided department that creates
+            an innovative academic environment, with distinctive emphasis on the overall development of students. Besides academic courses and
+            soft skills training, research and innovations are given due importance. Remedial coaching to the weak students has been acknowledeged
+            and appreciated by parents and students alike. The placement record of over 45% to its out going students is an example of what the 
+            department is capable of and recruiters of the likes of Tata Consultancy Services, Wipro Technologies, UST Global, Syntel Inc., Eureka 
+            Forbes and IBPS offered jobs to its students in the past. Another important initiative, the department has started in the recent past,
+            is the UGC NET coaching targeting students on and off the campus. The department was instrumental in the development of S-Tracker, a 
+            software for the easy management of semestrization.The duration of the B.Sc Computer Science Programme shall be six semesters
+            distributed over a period of three academic years. The odd semesters (1, 3, 5) shall be from June to October and the even Semesters(2, 4, 6)
+            shall be from November to March. Each semester shall have 90 working days, inclusive of all examinations.The minimum duration for completion 
+            of a four semester PG Programme is two years and the maximum period for completion is 4 years. The duration of each semester shall be 90
+            working days, inclusive of examinations,spread over five months.Odd semesters shall be held from June to October and even semesters from inception 
+            and in the year 2011, it was rechristened as ‘Srishti’ with the caption, ‘Capture the Future’. A national Seminar entitled,‘Research Trends
+            in computer science’, was also organized annually and was aimed to introduced the emerging areas to prospective researchers. The department
+            offers Certificate course for Computer Professionals for UG and Certificate course in MATLAB for PG students.
+        </p>
+      </div>
+   </div>
+    <br>
+        <div class="clgaddress">
+            <hr size=3 width="100%" color="black">
+            <br>
+            <div class="address">
+                <h3>GET IN TOUCH WITH US!</h3> 
+                <small>St.Thomas' College (Autonomous) <br>
+                Thrissur - 680 001, Kerala, India<br>
+                Phone: +91 487 2420 435<br>
+                Email : <a href="mailto:principal@stthomas.ac.in">principal@stthomas.ac.in</a><br>
+                Web: <a href="https://stthomas.ac.in/" target="blank">www.stthomas.ac.in </a>
+                </small>
+                <br><br>
+            </div>
+           
+             <br>
+            <div class="top">
+               
+                <h3>GET SOCIAL ! </h3>
+                 
+                <div class="media">
+                <a href="https://www.facebook.com/stthomascollegeautonomous/" target="_blank">
+                    <img src="https://img.icons8.com/dusk/64/000000/facebook-new--v2.png"  width="20" height="20"> </a>
+                    &nbsp;&nbsp;
+                <a href="https://mobile.twitter.com/stkerala" target="_blank">
+                    <img src="https://img.icons8.com/offices/30/000000/twitter.png" width="20" height="20"></a>
+                    &nbsp;&nbsp;
+                <a href="https://instagram.com/st.thomascollege?igshid=wdtnpo8oaebm" target="_blank">
+                    <img src="https://img.icons8.com/offices/30/000000/instagram-new.png" width="20" height="20"></a>
+                    &nbsp;&nbsp;
+                <a href="https://youtube.com/channel/UCyEt1zEHocBNw6ZzQefn4kQ" target="_blank">
+                    <img src="https://img.icons8.com/doodle/48/000000/youtube-play--v2.png" width="20" height="20"></a>
+                    &nbsp;&nbsp;
+                </div>    
+                
+                
+                <div class="arrow">
+                <a href="#introduction" title="Go up" style="font-size:30px">
+                    <b>^</b>
+                </a>
+            </div>
+            </div>
+        </div>
+        
+       
+    </body>
+</html>
+
+

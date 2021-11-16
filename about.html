@@ -166,6 +166,9 @@ span:hover + .dep{
    margin-right: 10%;
    border-radius: 5px;;
    box-shadow: 8px 3px 8px 8px #888888;
+   animation-name: descip;
+   animation-duration: 4s;
+   animation-iteration-count: 100;
 }
 
 .image{
@@ -189,7 +192,14 @@ span:hover + .dep{
    color:white;  
 }
 
- 
+@keyframes descip{
+   0% {background-color: white;}
+   20% {background-color: snow;}
+   40% {background-color: honeydew;}
+   60% {background-color: mintcream;}
+   80% {background-color: azure;}
+   100% {background-color: aliceblue;}
+} 
 .description{
    font-size:23px;
    text-align: justify;

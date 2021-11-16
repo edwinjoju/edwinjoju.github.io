@@ -102,6 +102,21 @@ section{
     line-height: 1.2;
     
 }
+
+@keyframes color_change {
+    0% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+    10% {background: linear-gradient(57deg,#00c6a7,#1e4d92);}
+    20% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+    30% {background: linear-gradient(57deg,#00c6a7,#1e4d92);}
+    40% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+    50% {background: linear-gradient(57deg,#00c6a7,#1e4d92);}
+    60% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+    70% {background: linear-gradient(57deg,#00c6a7,#1e4d92);}
+    80% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+    90% {background: linear-gradient(57deg,#00c6a7,#1e4d92);}
+    100% {background:linear-gradient(57deg, #1e4d92, #00c6a7);}
+}
+
 .topbox{
     display:flex;
     transition: 1s ease;
@@ -121,9 +136,13 @@ section{
     
 }
 .bot1:hover{
-    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
     font:bold;
+    animation: color_change;
+    animation-duration:4s;  
+    animation-iteration-count: 100;
 }
+
+
 .showdetail{
     display:none;
     font-size:15px;
@@ -162,7 +181,9 @@ span.viewmore:hover + .showdetail{
     box-shadow: 5px 3px 5px 5px #888888;
 }
 .bot2:hover{
-    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    animation: color_change;
+    animation-duration:4s;  
+    animation-iteration-count: 100;
     transition:1s ease;
 }
 
@@ -191,7 +212,9 @@ span.viewmore:hover + .showdetail{
     box-shadow: 5px 3px 5px 5px #888888;
 }
 .bot3:hover{
-    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
+    animation: color_change;
+    animation-duration:4s;  
+    animation-iteration-count: 100;
     transition:1s ease;
 }
 .bot3 img{
@@ -215,9 +238,9 @@ span.viewmore:hover + .showdetail{
     box-shadow: 5px 3px 5px 5px #888888;
 }
 .bot4:hover{
-    background:linear-gradient(57deg,#00c6a7, #1e4d92 );
-    transition:1s ease;
-    border: 2px solid turquoise
+    animation: color_change;
+    animation-duration:4s;  
+    animation-iteration-count: 100;
 }
 .bot4 img{
     border-radius: 5px;

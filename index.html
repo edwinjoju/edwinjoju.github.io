@@ -22,7 +22,7 @@
             } 
                 
             body{
-                 height: auto;
+                height: auto;
                 background:linear-gradient(45deg, #a5e0d8, #6c9adf);
                 }
             .bg{
@@ -35,6 +35,18 @@
                 display: flex;
                 font-family: 'Montserrat', sans-serif;
                 }
+            .minlogo
+            {
+                opacity: 0;
+                width: 50%;
+                height: 100px;
+            }
+            .minlogo a img{
+                line-height:70px;
+                height:75px;
+                position: relative;
+                margin-right:100%;
+                }
             .logo{
                 width: 50%;
                 height: 100px;
@@ -44,6 +56,21 @@
                 padding-left: 30px;
                 height:75px;  
                 }
+            @media only screen and (max-width: 750px)
+            {
+                .logo a img
+                {
+                    display:none;
+                }
+            }
+            @media only screen and (max-width: 750px)
+            {
+                .minlogo 
+                {
+                    opacity: 1;
+                }
+            }
+
             .menu{
                 height:100px;
                 width:50%;
@@ -53,7 +80,7 @@
                 width:100%;
                 display:flex;
                 flex-direction:row;
-                justify-content:space-around;
+                justify-content:space-between;
                 align-items: center;    
                 }
             .menu ul li{
@@ -183,6 +210,7 @@
     <body>
          <nav class="bg">
             <div class="logo"><a title="St Thomas Official Website" href="https://stthomas.ac.in/" target="blank"><img src="https://stthomas.ac.in/wp-content/uploads/2020/05/NEW-LOGO-STC1.png" alt=""></a></div>
+            <div class="minlogo"><a title="St Thomas Official Website" href="https://stthomas.ac.in/" target="blank"><img src="https://stthomas.ac.in/wp-content/uploads/2021/05/STC-Logo-Rays-e1621662485492.png" alt=""></a></div>
                 <div class="menu">
                     <ul>
                         <li><a  title="Homepage" href="index.html">HOME</a></li>

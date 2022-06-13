@@ -1,264 +1,405 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Department of CS</title>
-        <link rel = "icon" href = 
-        "https://stthomas.ac.in/wp-content/uploads/2021/05/STC-Logo-Rays-e1621662485492.png" 
-                type = "image/x-icon">
-        
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="styleh.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-        <style>
-            *{
-                margin:0;
-                padding:0;
-                scroll-behavior: smooth;
-            } 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/93c5a65f442891c5bf2837bc97caffef/84b88c809cc9a01a-81/s400x600/133f67d56cb6a9ffe5cc9d9804c71bb2249f5b97.pnj">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro');
+       @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    /*STYLE CSS*/
+    *{
+    padding:0;
+    margin: 0;
+    scroll-behavior: smooth;  
+    transition:0.8s ease;
+}
+
+section{
+    height: 800px;
+    width: 100%;
+}
+
+.navbar{
+    height: 80px;
+    width: 100%;
+    background-color: grey;
+    display: flex;
+}
+.logo{
+    height:100px;
+    width:12%;
+}
+.logo img{
+    height: 45px;
+    width: 45px;
+    margin-left: 20px;
+    margin-top: 18px; 
+}
+
+
+.menu{
+    width:80%;
+    height: 100px;
+}
+.menu ul{
+    height:80px;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: center;
+}
+.menu ul li{
+    padding:5px 32px ;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-family: 'Contrail One', cursive;
+    color: 	#500073;
+}
+
+.menu ul li a:hover{
+    background-color: lightgray;
+    padding:5px 20px;
+    border-radius:23px;
+    text-decoration: underline;
+    transition:0.8s ease;
+}
+
+.head-line{
+    margin-top: 20px;
+    font-weight: 900;
+}
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.xen-head{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 69px;
+}
+
+.xen-head1{
+    font-size: 69px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    animation-name: to-purple;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.xen-head2{
+    font-size: 69px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    animation-name: to-purple;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes to-purple{
+    0%{
+        color:black;
+    }
+    25%
+    {
+        color:#500073;
+    }
+    100%{
+        color:black;
+    }
+}
+
+
+.xen-quote{
+    font-family: 'Contrail One', cursive;
+    margin-left: 20px;
+}
+
+.dot1{
+    animation-name: display_dot1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.dot2{
+    animation-name: display_dot2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.dot3{
+    animation-name: display_dot3;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes display_dot1{
+    0%{
+        color:white;
+    }
+    25%{
+        color:black;
+    }
+    50%{
+        color:black;
+    }
+    75%{
+        color: black;
+    }
+    100%{
+        color:black;
+    }
+
+}
+
+@keyframes display_dot2{
+    0%{
+        color:white;
+    }
+    25%{
+            color:white;
+    }
+    50%{
+        color: black;
+    }
+    75%{
+        color: black;
+    }
+    100%{
+        color:black;
+    }
+
+}
+
+@keyframes display_dot3{
+    0%{
+        color:white;
+    }
+    25%{
+        color:white;
+    }
+    50%{
+        color:white;
+    }
+    75%{
+        color: black;
+    }
+    100%{
+        color:black;
+    }
+
+}
+
+.apps{
+    display: flex;
+    height: 600px; 
+     
+}
+
+.left{
+    height:auto;
+    width:50%;
+    margin-top: 20px;
+}
+
+.left img{
+    height: 500px;
+    border-radius: 23px;
+}
+
+  
+.right{
+    height: auto;
+    width:50%;
+    font-size: 20px;
+    text-align:justify;
+    padding:30px;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.3334133333;
+    letter-spacing: .009em;
+    font-weight: 600;
+    margin: 200px 50px 185px 100px;
+    border-radius: 16px;
+    background-color: #ededee;
+    
+   
+}
+
+.right:hover{
+    box-shadow: 6px 8px #888888;
+}
+
+.right h2{
+    color:#622aff;
+}
+.gallery{
+    display: flex;
+    height: 600px;
+    
+}
+
+
+.gallery-img img{
+    height: 400px;
+    border-radius: 23px;
+}
+.left-gallery h2{
+    color: #f63e54;
+}
+.left-gallery{
+    height: auto;
+    width:45%;
+    font-size: 20px;
+    text-align:justify;
+    padding:30px;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.3334133333;
+    letter-spacing: .009em;
+    font-weight: 600;
+    margin: 200px 50px 180px 100px;
+    border-radius: 16px;
+    background-color: #ededee;
+   
+}
+
+.left-gallery:hover{
+    box-shadow: 6px 8px #888888;
+}
+
+.right-gallery{
+    margin-top: 100px;
+    width: 50%;
+}
+
+
+.community{
+    height: 600px;
+     
+}
+.community-content img{
+    height:400px;
+    width: 800px;
+    margin-top: 80px;
+    margin-left: 350px;
+}
+
+.community-content h3{
+    font-size: 20px;
+    text-align:justify;
+    padding:30px;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.3334133333;
+    letter-spacing: .009em;
+    margin-left: 500px;
+}
+
+.community-content h3 a{
+    text-decoration: none;
+    color: blue;
+}
+
+    </style>
+
+    <title>Xen UI</title>
+</head>
+<body>
+    <section>
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://64.media.tumblr.com/93c5a65f442891c5bf2837bc97caffef/84b88c809cc9a01a-81/s400x600/133f67d56cb6a9ffe5cc9d9804c71bb2249f5b97.pnj" alt="">
+            </div>
+
+            <div class="menu" >
+                <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#community">Xen Community</a></li>
+                    <li><a href="#">Downloads</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="content">
+            <span class="xen-head">Xen UI </span>
+            <span class="xen-head1">1</span>
+            <span class="xen-head2">2</span>
+            <h2 class="xen-quote">Venturing Xtra creativity
+                <span class="dot1">.</span>
+                <span class="dot2">.</span>
+                <span class="dot3">.</span>
                 
-            body{
-                height: auto;
-                background:linear-gradient(45deg, #a5e0d8, #6c9adf);
-                }
-            .bg{
-                background:linear-gradient(57deg,#00c6a7, #1e4d92 );
-                }
+            </h2>
+            <hr class="head-line">
+        </div>
 
-            nav{
-                height:80px;
-                width:100%;
-                display: flex;
-                font-family: 'Montserrat', sans-serif;
-                }
-           
-            .logo{
-                width: 50%;
-                height: 100px;
-                }
-            .logo a img{
-                line-height:70px;
-                padding-left: 30px;
-                height:75px;  
-                }
-                .minlogo
-            {
-                opacity: 0;
-                width: 50%;
-                height: 100px;
-            }
-            .minlogo a img{
-                line-height:70px;
-                height:75px;
-                position: relative;
-                margin-right:100%;
-                }
-            @media only screen and (max-width: 750px)
-            {
-                .logo a img
-                {
-                    display:none;
-                }
-            }
-            @media only screen and (max-width: 750px)
-            {
-                .minlogo 
-                {
-                    opacity: 1;
-                }
-            }
+    </section>
 
-            .menu{
-                height:100px;
-                width:50%;
-                }
-            .menu ul{
-                height:80px;
-                width:100%;
-                display:flex;
-                flex-direction:row;
-                justify-content:space-between;
-                align-items: center;    
-                }
-            .menu ul li{
-                list-style: none;
-                font-size: 20px;
-                font-weight: bold;    
-                }
-            .menu ul li a{
-                text-decoration:none;
-                color:white;
-                }
-            .menu ul li a:hover{
-                background:linear-gradient(57deg, #1e4d92, #00c6a7);
-                background-repeat: no-repeat;
-                border-radius: 90px;
-                padding:5px 15px;
-                transition:0.8s ease;
-                text-decoration: underline;
-                font-family: 'Proza Libre', sans-serif;
-                color:white;  
-                }
-            .menu ul li a:active{
-                color:coral; 
-                } 
-            section{
-                display:flex;
-                 
-                }
-            .left{
-                height:auto;
-                width:50%;
-                margin-top: 20px;
-                }
-            .left img{
-                width: 90%;
-                height: 530px;
-                padding:10px;
-                border: 3px solid white;
-                border-radius: 23px;
-                margin-left: 10px;
-                box-shadow: 5px 3px 5px 5px #888888;
-                }
-            .right{
-                width:50%;
-                text-align:justify;
-                padding:0px 30px 10px 10px;
-                color:white;               
-                }
-            .right h1{
-                font-size: 35px;
-                font-weight: 900;
-                text-align: center;
-                padding: 3px;
-                font-family: 'Raleway', sans-serif;
-                border-bottom: 2px solid;
-                text-shadow: 2px 3px grey;    
-                }
-            .program ul li{
-                margin-left: 10px;
-                margin-right: 10px;
-                }
-            .right .program{
-                background:linear-gradient(57deg, #1e4d92, #00c6a7);
-                padding: 20px;
-                border: 0.5px transparent;
-                border-radius: 10px;
-                box-shadow: 5px 3px 5px 5px #888888;
-                color:white;
-                }
-            h2{
-                margin-left: 20%;
-                margin-right:20%;
-                padding-bottom: 01px;
-                }
+    <div class="apps">
 
-            .program h2{
-                text-align: center;
-                text-transform: uppercase;
-                font-family: 'Raleway', sans-serif;
-                border-bottom: 2px solid white;
-                margin-bottom: 10px;
-                }
-            .program p{
-                text-align: center;
-                }
-            .motto{
-                font-size: 19px;
-                font-family: 'Raleway', sans-serif;
-                margin-bottom: 10px;
-                }
-            .motto b{
-                font-size: 20px;
-                font-family:monospace;
-                }
-            .program .vision{
-                font-family: 'Raleway', sans-serif;
-                font-size: 18px;
-                margin-bottom: 10px;
-                }
-            ul li{
-                font-size: 15px;
-                font-family: 'Raleway', sans-serif;    
-                }
-            span{
-                color:turquoise; 
-                }  
-            .mission{
-                display: none;  
-                }
-            span:hover + .mission{
-                display: block; 
-                color: white;   
-                }
-            span h2:hover{
-                color:white;
-                }
-            .core{
-                display: none;  
-                }
-            span:hover + .core{
-                display: block;
-                color:white;
-                }
-        </style>
+        <div class="left">
+            <div class="sp-pic">
+                <img src="https://cdn.dribbble.com/users/1715186/screenshots/9168705/media/d4c4e054a3a53b57946074cdf70e2fb0.png?compress=1&resize=450x338&vertical=top" alt="">
+            </div>
+        </div>
 
-    </head>
-    <body>
-         <nav class="bg">
-            <div class="logo"><a title="St Thomas Official Website" href="https://stthomas.ac.in/" target="blank"><img src="https://stthomas.ac.in/wp-content/uploads/2020/05/NEW-LOGO-STC1.png" alt=""></a></div>
-            <div class="minlogo"><a title="St Thomas Official Website" href="https://stthomas.ac.in/" target="blank"><img src="https://stthomas.ac.in/wp-content/uploads/2021/05/STC-Logo-Rays-e1621662485492.png" alt=""></a></div>
-                <div class="menu">
-                    <ul>
-                        <li><a  title="Homepage" href="index.html">HOME</a></li>
-                        <li><a title="About Department" href="https://edwinjoju.github.io/about.html">ABOUT</a></li>
-                        <li><a title="Faculty Members" href="faculty.html">FACULTY</a></li>
-                        <li><a title="Course Syllabus" href="syllabus.html">SYLLABUS</a></li>
-                    </ul>
+        <div class="right">
+            <h2>
+                Camera
+            </h2>
+            <div class="txtbox">
+                "People who smile while they are alone used to be called insane, until we invented smartphones and social media.
+                Phones with numerical keypads worked best for dialing phone calls. 
+                 Incidentally, phone calls tend to be the primary function of a phone."
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+        <div class="left-gallery">
+            <h2>
+                Gallery
+            </h2>
+                <div class="txtbox-gallery">
+                   "Framed in a sleek magazine design, a refreshed, smarter Gallery manages your photos by providing a more intuitive and organized layout to navigate.
+                    Explore your personalized collections, reconnect with cherished memories, and discover even more reasons to smile."
                 </div>
-        </nav>
-                <br><br>
-        <section>
-            <div class="left"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/ST_Thomas_College_Thrissur.jpg" alt="cs" height="300" width="400"></div>
-                <div class="right">
-                    <h1 title="Dept of CS">WELCOME TO ST THOMAS COLLEGE</h1>
-                    <br>
-                        <div class="program">
-                            <h2>Our Motto</h2>
-                            <p class="motto">Veritas Vos Liberabit  ( The Truth will set you Free ) </p>
-                            <br><br>
-                            <h2>Our Vision</h2>
-                            <p class="vision">Transforming the Youth through Holistic Education towards an Enlightened Society.</p>
-                            <br><br>
-                            <span><h2>Our Mission</h2></span>
-                            <div class="mission">
-                                <ul>
-                                    <li>To Ensure Inclusion and Access of Quality Education</li>
-                                    <li>To Provide an Environment of Learning that enhances Dissemination of Knowledge.</li>
-                                    <li>To Nurture Research and Innovation for the betterment of Life and Progress of the Nation</li>
-                                    <li>To Undertake Collaborative Partnerships for Facilitating Exposure and Sharing</li>
-                                    <li>To Impart Social and Environmental Sensitivity in Students though Extension and Outreach</li>
-                                    <li>To Equip Students with Life Skills in Facing Challenges and Responsibilities.</li>
-                                </ul>
-                            </div>
-                            <br><br>
-                            <span><h2>Our Core Values</h2></span>
-                            <div class="core">
-                                <ul>
-                                    <li>Faith in God</li>
-                                    <li>Pursuit of excellence</li>
-                                    <li>Integrity</li>
-                                    <li>Diversity</li>
-                                    <li>Compassion</li>
-                                </ul>
-                            </div>
-                            <br>
-                        </div>
-                </div>
-        </section>   
-    </body>
+            
+        </div>
+        <div class="right-gallery">
+            <div class="gallery-img">
+                <img src="https://64.media.tumblr.com/181074e33c5e0bd5b02da4e61a506e7a/84b88c809cc9a01a-62/s500x750/14c2ef30b8489ab9339a53b102b630e45f0a9a2c.pnj" alt="">
+                <img src="https://64.media.tumblr.com/a1709738642d675536553e0e144c970b/84b88c809cc9a01a-1e/s500x750/9ad7cba9482e324f8f3cdde5a6cd06bc547ab158.pnj" alt="">
+                <img src="https://64.media.tumblr.com/433f3cdbdc8a4a35426daa01e55e9ab6/84b88c809cc9a01a-ad/s500x750/c4dece7992603931a7b226af4307adede7e4709f.pnj" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="community" id="community" >
+        <div class="community-content">
+           <img src="https://64.media.tumblr.com/51070a7836917e4bdc80b00c9014d97a/84b88c809cc9a01a-9a/s640x960/86f58d9cff3282eeea94d32dff9a341dd41042de.jpg" alt="Community" class="community-img">
+           <centre> <h3><a href="">Get insights from experienced community members ></a> </h3></centre>
+        </div>
+        <div class="right-community">
+
+        </div>
+    </div>
+
+
+
+    
+</body>
 </html>
+

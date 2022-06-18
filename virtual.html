@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Seminar</title>
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro');
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+       
+
+
+        *{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /*Navbar Styling*/
+        nav{
+            display: flex;
+            height: 75px;
+            width: 100%;
+            background-color:white;
+            position: fixed;
+        }
+
+       .logo{
+        height: 80px;
+        width: 50%;
+       }
+
+       .logo img{
+        height: 75px;
+        width: 200px;
+       }
+
+       .menu{
+        height: 72px;
+        width: 50%;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+       }
+       
+       .menu li{
+        list-style: none;
+       }
+       .menu  a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+       }
+       .menu a:hover{
+        background-color: bisque;
+        padding: 10px;
+        border-radius: 80px;
+        transition: 0.3s;
+        color: white;
+       }
+       #toblue{
+        background: rgb(129, 218, 218);
+        padding: 10px;
+        transition: 1s;
+       }
+        #toblue:hover{
+        border-radius: 50px;
+        background-color: rgb(129, 218, 218);;
+       }
+       
+       /*main page styling*/
+       .main-page{
+        background: linear-gradient(180deg ,rgba(255, 255, 255, 0.5),rgba(192, 188, 188, 0.5)), url(' https://c1.wallpaperflare.com/preview/679/648/926/student-woman-startup-business.jpg') ;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+       }
+
+       .content{
+        padding-left: 50px;
+        padding-top: 80px;
+
+       }
+       
+       .main-page .content h1{
+        font-size: 120px;
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 100px;
+       }
+       .lorem{
+        font-size:25px;
+        line-height: 1.5em;
+    }
+
+    button{
+        background-color: rgb(255, 255, 71);
+        font-size: 20px;
+        padding: 20px;
+        margin-top: 150px;
+        border: 0px;
+        position: static;
+        font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+    }
+  
+    button:hover{
+        border-radius: 72px;
+        background-color: yellow;
+        transition: 1s;
+    }
+
+
+    /*Second page styling*/
+    .second-page{
+        height: 90vh;
+        font-family: 'Kdam Thmor Pro', sans-serif;
+    }
+
+    .second-page{
+        font-family: 'Montserrat', sans-serif;
+        margin-top:100px;
+        margin-left: 300px;
+        
+    }
+    .secondpage-content{
+        display: flex;
+        width: 100%;
+    }
+    .second-page h2{
+        font-size:40px;
+        font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .simple{
+        width: 50%;
+    }
+    .simple img{
+        height: 250px;
+        width: 430px;
+    }
+    .simple h3{
+        text-decoration: underline;
+        text-decoration-color: orange;
+        text-decoration-thickness: 5px;
+    }
+    .simple-desc{
+    line-height: 1.5em;
+    background-color: white;
+    margin: -45px 670px 100px 110px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    }
+
+    .promotion{
+        width: 50% ;
+    }
+    .promotion img{
+        height: 250px;
+    width: 430px;
+    }
+    .promotion h3{
+        text-decoration: underline;
+        text-decoration-color: orange;
+        text-decoration-thickness: 5px;
+        
+    }
+    .promotion-desc{
+        line-height: 1.5em;
+        background-color: white;
+         margin: -45px 76px 100px 100px;
+        padding: 20px;
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+    }
+
+    /*Footwer styling*/
+    footer{
+        background-color: black;
+        border-top: 20px solid orange;
+        color: white;
+        
+    }
+    .footer-section{
+        display: flex;
+        height: 35vh;
+        width: 100%;
+    }
+
+    .left-footer{
+        width: 50%;
+        margin: 50px 300px 10px 300px;
+    }
+    .left-footer img{
+        height: 75px;
+        width: 200px;
+    }
+    .menu-footer{
+        width: 50%;
+        display: flex;
+    }
+    .menu-footer li{
+        list-style: none;
+    }
+    .menu-footer li a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .left-footer-menu{
+        margin: 80px 10px 10px 10px;
+        line-height: 2em;
+    }
+
+    .right-footer-menu{
+        margin: 80px 10px 10px 50px;
+        line-height: 2em;
+    }
+
+    .copy p{
+     margin-left: 50%;
+     margin-top: -20px;
+    }
+
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <!--Apply Logo-->
+        <div class="logo">
+            <img src="https://www.onlineseminar.com/wp-content/uploads/2021/10/Combi-logo-website-color.png" alt="" class="logo-header">
+        </div>
+        
+
+        <!--Navigation buttons-->
+
+        <div class="menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#" id="toblue">Book a Call</a></li>
+        </div>
+    </nav>
+
+    <section class="main-page">
+        <div class="content">
+            <!--Heading-->
+        <h1 class="head-virtual">Virtual Seminar</h1>
+            <br>
+        <!--Desciption-->
+        <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptate veniam consectetur maxim
+            e magni delectus dolores sunt pariatur beatae hic dolorum quis laboriosam cupiditate ipsa voluptatum,
+             voluptas laborum? Rerum ullam consequatur dolores beatae veritatis impedit, distinctio itaque dolor 
+      
+        </p>
+        <a href=""><button>Register today</button></a>
+        </div>
+        
+    </section>
+
+    <!--Second Page section-->
+    <section class="second-page">
+
+        <h2 class="imp">Important Services</h2>
+        <div class="secondpage-content">
+            <div class="simple">
+                <img src="https://as2.ftcdn.net/v2/jpg/02/40/45/11/1000_F_240451100_pbi79QMcM3giTmzohoxHh6urgLy4bFUH.jpg" alt="">
+                
+                <div class="simple-desc">
+                    <h3>Simple</h3> <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Et ipsa possimus iure dolorem sapiente unde 
+                    quidem sint nobis dolores necessitatibus?
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="promotion">
+                <img src="https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hY2Jvb2slMjBjb2ZmZWV8ZW58MHx8MHx8&w=1000&q=80" alt="">
+                
+                <div class="promotion-desc">
+                    <h3>Promotion</h3>
+                    <br> 
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quaerat corrupti nesciunt veritatis repellendus animi 
+                    consectetur. Atque aliquid dicta nulla quaerat!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <footer>
+        <div class="footer-section">
+
+        
+            <div class="left-footer">
+                <img src="https://www.onlineseminar.com/wp-content/uploads/2021/10/Combi-logo-website-color.png" alt="" class="logo-footer">
+                <br><br>
+                <p>Address: <br>
+                    1234 Street name <br>
+                    City AA 99999    
+                </p>
+            </div>
+           
+
+            <div class="menu-footer">
+
+                <div class="left-footer-menu">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Seminar</a></li>
+                </div>
+
+                <div class="right-footer-menu">
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Method</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Supply</a></li>
+                </div>
+            </div>
+        </div>
+            <div class="copy"><p>&copy Copyright 2022</p></div>
+            <br>
+        
+    </footer>
+</body>
+</html>

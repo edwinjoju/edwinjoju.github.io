@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), 
+                        linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff4081, #f50057);
+            border: none;
+            border-radius: 10px;
+            padding: 15px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, border-radius 0.3s ease;
+            outline: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+            border-radius: 50px; /* Change border-radius on hover */
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10%;
+            transition: transform 0.8s ease;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 0;
+        }
+
+        button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0.5;
+            font-size: 14px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        <h1><a href="https://ams.hirepro.in/assessment/#/compatibility/accenture/seb">Test the compatibility</a></h1>
+    </button>
+    <div class="watermark">Edwin made this</div>
+</body>
+</html>

@@ -69,7 +69,7 @@
                 </button>
             </form>
             <div class="mt-6 text-center text-xs text-slate-400">
-                Default: <span class="font-mono text-slate-600 font-semibold">admin</span> / <span class="font-mono text-slate-600 font-semibold">admin</span>
+                Contact: <span class="font-mono text-slate-600 font-semibold">edwinjoju_la</span> / <span class="font-mono text-slate-600 font-semibold">X.com</span>
             </div>
         </div>
     </div>
@@ -113,7 +113,7 @@
                             <span>Live Academic Drive</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Organized Course Resources.</h2>
-                        <p class="text-slate-500 text-sm mt-2 max-w-md leading-relaxed">Access verified Google Drive study materials filtered seamlessly by semester, course code, and topic.</p>
+                        <p class="text-slate-500 text-sm mt-2 max-w-md leading-relaxed">Access verified Google Drive study materials filtered seamlessly by semester, course code, unit number, or independent note.</p>
                     </div>
                     <div class="pt-6 mt-6 border-t border-slate-100 flex items-center gap-6">
                         <div>
@@ -143,11 +143,11 @@
                             </button>
                         </div>
                         <h3 class="text-lg font-semibold text-white mb-1">Manage & Filter Repository</h3>
-                        <p class="text-xs text-slate-400">Instantly locate notes, syllabus, or past papers.</p>
+                        <p class="text-xs text-slate-400">Instantly locate notes, unit modules, or past papers.</p>
                     </div>
                     <div class="mt-6 relative">
                         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search course code or name..." class="w-full pl-10 pr-4 py-2.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all" />
+                        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search course code, unit, or name..." class="w-full pl-10 pr-4 py-2.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all" />
                     </div>
                 </div>
             </div>
@@ -177,6 +177,14 @@
                         <span class="text-slate-400 font-normal">Code:</span>
                         <select id="filter-code" onchange="handleCodeChange(this.value)" class="bg-transparent border-none text-slate-900 font-semibold focus:outline-none cursor-pointer w-full sm:w-auto">
                             <option value="All">All Codes</option>
+                        </select>
+                    </div>
+                    <!-- Unit / Type Filter -->
+                    <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5 text-slate-400"></i>
+                        <span class="text-slate-400 font-normal">Unit/Type:</span>
+                        <select id="filter-unit" onchange="handleUnitChange(this.value)" class="bg-transparent border-none text-slate-900 font-semibold focus:outline-none cursor-pointer w-full sm:w-auto">
+                            <option value="All">All Units / Notes</option>
                         </select>
                     </div>
                 </div>
@@ -238,12 +246,22 @@
                         </select>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Name</label>
-                    <select id="form-course-name" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
-                        <!-- Populated dynamically -->
-                    </select>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Name</label>
+                        <select id="form-course-name" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Unit / Resource Type</label>
+                        <select id="form-unit" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
                 </div>
+
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Google Drive URL</label>
                     <input type="url" id="form-link" required placeholder="https://drive.google.com/..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
@@ -300,6 +318,15 @@
             "Mobile Computing"
         ];
 
+        const PRESET_UNITS = [
+            "Unit 1",
+            "Unit 2",
+            "Unit 3",
+            "Unit 4",
+            "Unit 5",
+            "Independent Note"
+        ];
+
         const firebaseConfig = {
             apiKey: "AIzaSyCd1RK-oW7_CptdOIUIZ7qdNz7obBvhMSs",
             authDomain: "bento-studyhub.firebaseapp.com",
@@ -318,6 +345,7 @@
         let currentSemester = 'All';
         let currentCourse = 'All';
         let currentCode = 'All';
+        let currentUnit = 'All';
         let searchQuery = '';
 
         // Initialize Dropdown Options
@@ -335,6 +363,10 @@
             filterCode.innerHTML = '<option value="All">All Codes</option>' + 
                 PRESET_CODES.map(c => `<option value="${c}">${c}</option>`).join('');
 
+            const filterUnit = document.getElementById('filter-unit');
+            filterUnit.innerHTML = '<option value="All">All Units / Notes</option>' + 
+                PRESET_UNITS.map(u => `<option value="${u}">${u}</option>`).join('');
+
             // Modal Select Dropdowns
             const formSem = document.getElementById('form-semester');
             formSem.innerHTML = '<option value="" disabled selected>Select Semester</option>' + 
@@ -347,6 +379,10 @@
             const formCourse = document.getElementById('form-course-name');
             formCourse.innerHTML = '<option value="" disabled selected>Select Course Name</option>' + 
                 PRESET_COURSES.map(c => `<option value="${c}">${c}</option>`).join('');
+
+            const formUnit = document.getElementById('form-unit');
+            formUnit.innerHTML = '<option value="" disabled selected>Select Unit / Type</option>' + 
+                PRESET_UNITS.map(u => `<option value="${u}">${u}</option>`).join('');
         }
 
         initPresets();
@@ -389,6 +425,7 @@
                     semester: document.getElementById('form-semester').value,
                     code: document.getElementById('form-course-code').value,
                     name: document.getElementById('form-course-name').value,
+                    unit: document.getElementById('form-unit').value,
                     link: document.getElementById('form-link').value.trim()
                 };
 
@@ -428,6 +465,7 @@
                 document.getElementById('form-semester').value = item.semester || PRESET_SEMESTERS[0];
                 document.getElementById('form-course-code').value = item.code || PRESET_CODES[0];
                 document.getElementById('form-course-name').value = item.name || PRESET_COURSES[0];
+                document.getElementById('form-unit').value = item.unit || PRESET_UNITS[0];
                 document.getElementById('form-link').value = item.link || '';
             } else {
                 title.textContent = "Add Study Material";
@@ -436,6 +474,7 @@
                 document.getElementById('form-semester').selectedIndex = 0;
                 document.getElementById('form-course-code').selectedIndex = 0;
                 document.getElementById('form-course-name').selectedIndex = 0;
+                document.getElementById('form-unit').selectedIndex = 0;
             }
             modal.classList.remove('hidden');
         };
@@ -458,16 +497,19 @@
         window.handleSemesterChange = (val) => { currentSemester = val; render(); };
         window.handleCourseChange = (val) => { currentCourse = val; render(); };
         window.handleCodeChange = (val) => { currentCode = val; render(); };
+        window.handleUnitChange = (val) => { currentUnit = val; render(); };
         window.handleSearch = (val) => { searchQuery = val.toLowerCase(); render(); };
 
         window.resetFilters = () => {
             currentSemester = 'All';
             currentCourse = 'All';
             currentCode = 'All';
+            currentUnit = 'All';
             searchQuery = '';
             document.getElementById('filter-semester').value = 'All';
             document.getElementById('filter-course').value = 'All';
             document.getElementById('filter-code').value = 'All';
+            document.getElementById('filter-unit').value = 'All';
             document.getElementById('search-input').value = '';
             render();
         };
@@ -481,11 +523,13 @@
                 const matchSem = currentSemester === 'All' || m.semester === currentSemester;
                 const matchCourse = currentCourse === 'All' || m.name === currentCourse;
                 const matchCode = currentCode === 'All' || m.code === currentCode;
+                const matchUnit = currentUnit === 'All' || m.unit === currentUnit;
                 const matchQuery = !searchQuery || 
                                    (m.name && m.name.toLowerCase().includes(searchQuery)) || 
                                    (m.code && m.code.toLowerCase().includes(searchQuery)) ||
+                                   (m.unit && m.unit.toLowerCase().includes(searchQuery)) ||
                                    (m.semester && m.semester.toLowerCase().includes(searchQuery));
-                return matchSem && matchCourse && matchCode && matchQuery;
+                return matchSem && matchCourse && matchCode && matchUnit && matchQuery;
             });
 
             const grid = document.getElementById('materials-grid');
@@ -504,7 +548,10 @@
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200/60">${m.semester || 'N/A'}</span>
-                            <span class="text-xs font-mono font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">${m.code || ''}</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-xs font-semibold px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded border border-indigo-200/60">${m.unit || 'Independent Note'}</span>
+                                <span class="text-xs font-mono font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">${m.code || ''}</span>
+                            </div>
                         </div>
                         <h3 class="font-bold text-base text-slate-900 group-hover:text-indigo-600 transition-colors mb-1">${m.name || 'Untitled Course'}</h3>
                     </div>

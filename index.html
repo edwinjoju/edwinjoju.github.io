@@ -69,7 +69,7 @@
                 </button>
             </form>
             <div class="mt-6 text-center text-xs text-slate-400">
-                Contact: <span class="font-mono text-slate-600 font-semibold">edwinjoju_la</span> / <span class="font-mono text-slate-600 font-semibold">@x.com</span>
+                Default: <span class="font-mono text-slate-600 font-semibold">admin</span> / <span class="font-mono text-slate-600 font-semibold">admin</span>
             </div>
         </div>
     </div>
@@ -155,6 +155,7 @@
             <!-- FILTER BAR -->
             <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+                    <!-- Semester Filter -->
                     <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
                         <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-400 font-normal">Sem:</span>
@@ -162,11 +163,20 @@
                             <option value="All">All Semesters</option>
                         </select>
                     </div>
+                    <!-- Course Filter -->
                     <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
                         <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-400 font-normal">Course:</span>
                         <select id="filter-course" onchange="handleCourseChange(this.value)" class="bg-transparent border-none text-slate-900 font-semibold focus:outline-none cursor-pointer w-full sm:w-auto">
                             <option value="All">All Courses</option>
+                        </select>
+                    </div>
+                    <!-- Code Filter -->
+                    <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
+                        <i data-lucide="hash" class="w-3.5 h-3.5 text-slate-400"></i>
+                        <span class="text-slate-400 font-normal">Code:</span>
+                        <select id="filter-code" onchange="handleCodeChange(this.value)" class="bg-transparent border-none text-slate-900 font-semibold focus:outline-none cursor-pointer w-full sm:w-auto">
+                            <option value="All">All Codes</option>
                         </select>
                     </div>
                 </div>
@@ -217,16 +227,22 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Semester</label>
-                        <input type="text" id="form-semester" required placeholder="e.g. Semester 1" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
+                        <select id="form-semester" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
+                            <!-- Populated dynamically -->
+                        </select>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Code</label>
-                        <input type="text" id="form-course-code" required placeholder="e.g. CS-101" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all uppercase font-mono placeholder:text-slate-400" />
+                        <select id="form-course-code" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs font-mono focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
+                            <!-- Populated dynamically -->
+                        </select>
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Name</label>
-                    <input type="text" id="form-course-name" required placeholder="e.g. Introduction to Computer Science" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
+                    <select id="form-course-name" required class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all">
+                        <!-- Populated dynamically -->
+                    </select>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Google Drive URL</label>
@@ -258,6 +274,32 @@
             getFirestore, collection, onSnapshot, addDoc, doc, updateDoc, deleteDoc 
         } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+        // Pre-defined Masters Data
+        const PRESET_SEMESTERS = [
+            "Semester 1", "Semester 2", "Semester 3", 
+            "Semester 4", "Semester 5", "Semester 6"
+        ];
+
+        const PRESET_CODES = Array.from({ length: 22 }, (_, i) => `MCS${211 + i}`);
+
+        const PRESET_COURSES = [
+            "Design & Analysis of Algorithms",
+            "Discrete Mathematics",
+            "Software Engineering",
+            "Professional Skills & Ethics",
+            "Security & Cyber Laws",
+            "Data Communication and Computer Networks",
+            "Object-Oriented Analysis and Design (OOAD)",
+            "Web Technologies",
+            "Data Warehousing and Data Mining",
+            "Artificial Intelligence and Machine Learning",
+            "Accountancy and Financial Management",
+            "Data Science and Big Data",
+            "Cloud Computing and IoT",
+            "Digital Image Processing and Computer Vision",
+            "Mobile Computing"
+        ];
+
         const firebaseConfig = {
             apiKey: "AIzaSyCd1RK-oW7_CptdOIUIZ7qdNz7obBvhMSs",
             authDomain: "bento-studyhub.firebaseapp.com",
@@ -275,18 +317,49 @@
         let materials = [];
         let currentSemester = 'All';
         let currentCourse = 'All';
+        let currentCode = 'All';
         let searchQuery = '';
+
+        // Initialize Dropdown Options
+        function initPresets() {
+            // Main Filter Dropdowns
+            const filterSem = document.getElementById('filter-semester');
+            filterSem.innerHTML = '<option value="All">All Semesters</option>' + 
+                PRESET_SEMESTERS.map(s => `<option value="${s}">${s}</option>`).join('');
+
+            const filterCourse = document.getElementById('filter-course');
+            filterCourse.innerHTML = '<option value="All">All Courses</option>' + 
+                PRESET_COURSES.map(c => `<option value="${c}">${c}</option>`).join('');
+
+            const filterCode = document.getElementById('filter-code');
+            filterCode.innerHTML = '<option value="All">All Codes</option>' + 
+                PRESET_CODES.map(c => `<option value="${c}">${c}</option>`).join('');
+
+            // Modal Select Dropdowns
+            const formSem = document.getElementById('form-semester');
+            formSem.innerHTML = '<option value="" disabled selected>Select Semester</option>' + 
+                PRESET_SEMESTERS.map(s => `<option value="${s}">${s}</option>`).join('');
+
+            const formCode = document.getElementById('form-course-code');
+            formCode.innerHTML = '<option value="" disabled selected>Select Code</option>' + 
+                PRESET_CODES.map(c => `<option value="${c}">${c}</option>`).join('');
+
+            const formCourse = document.getElementById('form-course-name');
+            formCourse.innerHTML = '<option value="" disabled selected>Select Course Name</option>' + 
+                PRESET_COURSES.map(c => `<option value="${c}">${c}</option>`).join('');
+        }
+
+        initPresets();
 
         // Realtime Firestore Listener
         onSnapshot(materialsCol, (snapshot) => {
             materials = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
-            populateDropdowns();
             render();
         }, (error) => {
             console.error("Firestore error:", error);
         });
 
-        // Login Form Submission Listener
+        // Login Handler
         const loginForm = document.getElementById('login-form');
         if (loginForm) {
             loginForm.addEventListener('submit', (e) => {
@@ -306,16 +379,16 @@
             });
         }
 
-        // Material Form Submission Listener
+        // Material Form Handler
         const materialForm = document.getElementById('material-form');
         if (materialForm) {
             materialForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const id = document.getElementById('form-id').value;
                 const payload = {
-                    semester: document.getElementById('form-semester').value.trim(),
-                    code: document.getElementById('form-course-code').value.trim().toUpperCase(),
-                    name: document.getElementById('form-course-name').value.trim(),
+                    semester: document.getElementById('form-semester').value,
+                    code: document.getElementById('form-course-code').value,
+                    name: document.getElementById('form-course-name').value,
                     link: document.getElementById('form-link').value.trim()
                 };
 
@@ -352,14 +425,17 @@
                 if(!item) return;
                 title.textContent = "Edit Study Material";
                 document.getElementById('form-id').value = item.id;
-                document.getElementById('form-semester').value = item.semester || '';
-                document.getElementById('form-course-code').value = item.code || '';
-                document.getElementById('form-course-name').value = item.name || '';
+                document.getElementById('form-semester').value = item.semester || PRESET_SEMESTERS[0];
+                document.getElementById('form-course-code').value = item.code || PRESET_CODES[0];
+                document.getElementById('form-course-name').value = item.name || PRESET_COURSES[0];
                 document.getElementById('form-link').value = item.link || '';
             } else {
                 title.textContent = "Add Study Material";
                 form.reset();
                 document.getElementById('form-id').value = '';
+                document.getElementById('form-semester').selectedIndex = 0;
+                document.getElementById('form-course-code').selectedIndex = 0;
+                document.getElementById('form-course-name').selectedIndex = 0;
             }
             modal.classList.remove('hidden');
         };
@@ -381,28 +457,20 @@
 
         window.handleSemesterChange = (val) => { currentSemester = val; render(); };
         window.handleCourseChange = (val) => { currentCourse = val; render(); };
+        window.handleCodeChange = (val) => { currentCode = val; render(); };
         window.handleSearch = (val) => { searchQuery = val.toLowerCase(); render(); };
 
         window.resetFilters = () => {
             currentSemester = 'All';
             currentCourse = 'All';
+            currentCode = 'All';
             searchQuery = '';
             document.getElementById('filter-semester').value = 'All';
             document.getElementById('filter-course').value = 'All';
+            document.getElementById('filter-code').value = 'All';
             document.getElementById('search-input').value = '';
             render();
         };
-
-        function populateDropdowns() {
-            const semSelect = document.getElementById('filter-semester');
-            const courseSelect = document.getElementById('filter-course');
-
-            const sems = ['All', ...new Set(materials.map(m => m.semester).filter(Boolean))];
-            const courses = ['All', ...new Set(materials.map(m => m.name).filter(Boolean))];
-
-            semSelect.innerHTML = sems.map(s => `<option value="${s}" ${s === currentSemester ? 'selected' : ''}>${s === 'All' ? 'All Semesters' : s}</option>`).join('');
-            courseSelect.innerHTML = courses.map(c => `<option value="${c}" ${c === currentCourse ? 'selected' : ''}>${c === 'All' ? 'All Courses' : c}</option>`).join('');
-        }
 
         function render() {
             document.getElementById('stat-total').textContent = materials.length;
@@ -412,11 +480,12 @@
             const filtered = materials.filter(m => {
                 const matchSem = currentSemester === 'All' || m.semester === currentSemester;
                 const matchCourse = currentCourse === 'All' || m.name === currentCourse;
+                const matchCode = currentCode === 'All' || m.code === currentCode;
                 const matchQuery = !searchQuery || 
                                    (m.name && m.name.toLowerCase().includes(searchQuery)) || 
                                    (m.code && m.code.toLowerCase().includes(searchQuery)) ||
                                    (m.semester && m.semester.toLowerCase().includes(searchQuery));
-                return matchSem && matchCourse && matchQuery;
+                return matchSem && matchCourse && matchCode && matchQuery;
             });
 
             const grid = document.getElementById('materials-grid');

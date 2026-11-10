@@ -29,31 +29,16 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom subtle scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="h-full text-slate-800 antialiased selection:bg-slate-900 selection:text-white">
 
-    <!-- ========================================== -->
-    <!-- LOGIN VIEW                                 -->
-    <!-- ========================================== -->
+    <!-- LOGIN VIEW -->
     <div id="login-view" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-50">
         <div class="w-full max-w-md bg-white border border-slate-200/80 rounded-3xl p-8 shadow-xl shadow-slate-200/50">
             <div class="flex flex-col items-center text-center mb-8">
@@ -69,85 +54,48 @@
                 <span>Invalid credentials. Use admin / admin</span>
             </div>
 
-            <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+            <form id="login-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">User ID</label>
-                    <input 
-                        type="text" 
-                        id="login-username" 
-                        value="admin" 
-                        required 
-                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400"
-                        placeholder="Enter User ID"
-                    />
+                    <input type="text" id="login-username" value="admin" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" placeholder="Enter User ID" />
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Password</label>
-                    <input 
-                        type="password" 
-                        id="login-password" 
-                        value="admin" 
-                        required 
-                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400"
-                        placeholder="Enter Password"
-                    />
+                    <input type="password" id="login-password" value="admin" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" placeholder="Enter Password" />
                 </div>
-                <button 
-                    type="submit" 
-                    class="w-full py-3.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition-all shadow-md shadow-slate-900/10 active:scale-[0.99] flex items-center justify-center gap-2 mt-2"
-                >
+                <button type="submit" class="w-full py-3.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition-all shadow-md shadow-slate-900/10 active:scale-[0.99] flex items-center justify-center gap-2 mt-2">
                     <span>Sign In</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </form>
             <div class="mt-6 text-center text-xs text-slate-400">
-                Default: <span class="font-mono text-slate-600 font-semibold">admin</span> / <span class="font-mono text-slate-600 font-semibold">admin</span>
+                Contact: <span class="font-mono text-slate-600 font-semibold">edwinjoju_la</span> / <span class="font-mono text-slate-600 font-semibold">@x.com</span>
             </div>
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- MAIN APPLICATION VIEW                      -->
-    <!-- ========================================== -->
+    <!-- MAIN APPLICATION VIEW -->
     <div id="app-view" class="hidden min-h-screen flex flex-col">
-        
-        <!-- Header -->
         <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center text-white">
                         <i data-lucide="folder-git-2" class="w-5 h-5"></i>
                     </div>
-                    <div>
-                        <span class="font-bold text-slate-900 tracking-tight text-base block">Study Materials</span>
-                    </div>
+                    <span class="font-bold text-slate-900 tracking-tight text-base block">Study Materials</span>
                 </div>
 
                 <nav class="flex items-center gap-2 sm:gap-4">
-                    <button 
-                        onclick="resetFilters()" 
-                        class="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-1.5"
-                    >
+                    <button onclick="resetFilters()" class="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-1.5">
                         <i data-lucide="home" class="w-3.5 h-3.5"></i>
                         <span>Home</span>
                     </button>
-                    
-                    <a 
-                        href="https://github.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-1.5"
-                    >
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-1.5">
                         <i data-lucide="github" class="w-3.5 h-3.5"></i>
                         <span>GitHub</span>
                     </a>
-
                     <div class="h-4 w-px bg-slate-200 mx-1"></div>
-
-                    <button 
-                        onclick="handleLogout()" 
-                        class="px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-50 rounded-lg transition-colors flex items-center gap-1.5"
-                    >
+                    <button onclick="handleLogout()" class="px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-50 rounded-lg transition-colors flex items-center gap-1.5">
                         <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
                         <span>Log Off</span>
                     </button>
@@ -155,13 +103,8 @@
             </div>
         </header>
 
-        <!-- Main Content -->
         <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-            
-            <!-- BENTO HERO / CONTROL SECTION -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-                
-                <!-- Bento Hero Tile (7 cols) -->
                 <div class="md:col-span-7 bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group">
                     <div class="absolute -right-8 -top-8 w-40 h-40 bg-slate-100 rounded-full blur-2xl group-hover:bg-slate-200/60 transition-all pointer-events-none"></div>
                     <div>
@@ -169,15 +112,9 @@
                             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                             <span>Live Academic Drive</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                            Organized Course Resources.
-                        </h2>
-                        <p class="text-slate-500 text-sm mt-2 max-w-md leading-relaxed">
-                            Access verified Google Drive study materials filtered seamlessly by semester, course code, and topic.
-                        </p>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Organized Course Resources.</h2>
+                        <p class="text-slate-500 text-sm mt-2 max-w-md leading-relaxed">Access verified Google Drive study materials filtered seamlessly by semester, course code, and topic.</p>
                     </div>
-
-                    <!-- Quick Stats Pill inside Hero -->
                     <div class="pt-6 mt-6 border-t border-slate-100 flex items-center gap-6">
                         <div>
                             <span class="block text-2xl font-bold text-slate-900" id="stat-total">0</span>
@@ -196,15 +133,11 @@
                     </div>
                 </div>
 
-                <!-- Bento Action & Filter Tile (5 cols) -->
                 <div class="md:col-span-5 bg-slate-900 text-white border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs font-mono uppercase tracking-widest text-slate-400">Quick Controls</span>
-                            <button 
-                                onclick="openModal()" 
-                                class="px-3.5 py-2 bg-white text-slate-900 hover:bg-slate-100 font-semibold text-xs rounded-xl transition-all shadow-sm flex items-center gap-1.5 active:scale-95"
-                            >
+                            <button onclick="openModal()" class="px-3.5 py-2 bg-white text-slate-900 hover:bg-slate-100 font-semibold text-xs rounded-xl transition-all shadow-sm flex items-center gap-1.5 active:scale-95">
                                 <i data-lucide="plus" class="w-4 h-4"></i>
                                 <span>Add Material</span>
                             </button>
@@ -212,26 +145,16 @@
                         <h3 class="text-lg font-semibold text-white mb-1">Manage & Filter Repository</h3>
                         <p class="text-xs text-slate-400">Instantly locate notes, syllabus, or past papers.</p>
                     </div>
-
-                    <!-- Search Input -->
                     <div class="mt-6 relative">
                         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            oninput="handleSearch(this.value)"
-                            placeholder="Search course code or name..." 
-                            class="w-full pl-10 pr-4 py-2.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all"
-                        />
+                        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search course code or name..." class="w-full pl-10 pr-4 py-2.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500 transition-all" />
                     </div>
                 </div>
-
             </div>
 
             <!-- FILTER BAR -->
             <div class="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
-                    <!-- Semester Dropdown -->
                     <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
                         <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-400 font-normal">Sem:</span>
@@ -239,8 +162,6 @@
                             <option value="All">All Semesters</option>
                         </select>
                     </div>
-
-                    <!-- Course Dropdown -->
                     <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-medium text-slate-700 w-full sm:w-auto">
                         <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-400 font-normal">Course:</span>
@@ -249,33 +170,25 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="flex items-center justify-between w-full sm:w-auto gap-3 text-xs text-slate-500">
                     <span id="results-count">Showing 0 materials</span>
                     <button onclick="resetFilters()" class="text-slate-600 hover:text-slate-900 underline text-xs">Clear Filters</button>
                 </div>
             </div>
 
-            <!-- BENTO GRID MATERIAL CARDS -->
-            <div id="materials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- Dynamically populated cards -->
-            </div>
+            <!-- CARDS GRID -->
+            <div id="materials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
-            <!-- Empty State -->
             <div id="empty-state" class="hidden bg-white border border-slate-200/80 rounded-3xl p-12 text-center">
                 <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-400 mx-auto mb-3">
                     <i data-lucide="folder-search" class="w-6 h-6"></i>
                 </div>
                 <h3 class="text-base font-semibold text-slate-900">No Study Materials Found</h3>
                 <p class="text-xs text-slate-500 mt-1 max-w-xs mx-auto">No resources match your current filter settings. Try clearing your search or add a new link.</p>
-                <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800 transition-colors">
-                    Reset All Filters
-                </button>
+                <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800 transition-colors">Reset All Filters</button>
             </div>
-
         </main>
 
-        <!-- Footer -->
         <footer class="bg-white border-t border-slate-200/80 py-6 mt-12">
             <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400">
                 <p>© Academic Bento Hub. Open access study resource index.</p>
@@ -283,14 +196,9 @@
         </footer>
     </div>
 
-    <!-- ========================================== -->
-    <!-- ADD / EDIT MODAL                           -->
-    <!-- ========================================== -->
+    <!-- MODAL -->
     <div id="material-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
-        <!-- Backdrop -->
         <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onclick="closeModal()"></div>
-
-        <!-- Card -->
         <div class="relative w-full max-w-lg bg-white border border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-8 overflow-hidden">
             <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                 <div class="flex items-center gap-2.5">
@@ -304,66 +212,29 @@
                 </button>
             </div>
 
-            <form id="material-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <form id="material-form" class="space-y-4">
                 <input type="hidden" id="form-id" />
-
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Semester</label>
-                        <input 
-                            type="text" 
-                            id="form-semester" 
-                            required 
-                            placeholder="e.g. Semester 1"
-                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400"
-                        />
+                        <input type="text" id="form-semester" required placeholder="e.g. Semester 1" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Code</label>
-                        <input 
-                            type="text" 
-                            id="form-course-code" 
-                            required 
-                            placeholder="e.g. CS-101"
-                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all uppercase font-mono placeholder:text-slate-400"
-                        />
+                        <input type="text" id="form-course-code" required placeholder="e.g. CS-101" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all uppercase font-mono placeholder:text-slate-400" />
                     </div>
                 </div>
-
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Course Name</label>
-                    <input 
-                        type="text" 
-                        id="form-course-name" 
-                        required 
-                        placeholder="e.g. Introduction to Computer Science"
-                        class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400"
-                    />
+                    <input type="text" id="form-course-name" required placeholder="e.g. Introduction to Computer Science" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
                 </div>
-
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Google Drive URL</label>
-                    <input 
-                        type="url" 
-                        id="form-link" 
-                        required 
-                        placeholder="https://drive.google.com/drive/folders/..."
-                        class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400"
-                    />
+                    <input type="url" id="form-link" required placeholder="https://drive.google.com/..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:bg-white focus:ring-2 focus:ring-slate-900 transition-all placeholder:text-slate-400" />
                 </div>
-
                 <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 mt-6">
-                    <button 
-                        type="button" 
-                        onclick="closeModal()" 
-                        class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
-                    >
-                        Cancel
-                    </button>
-                    <button 
-                        type="submit" 
-                        class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs rounded-xl transition-all shadow-md shadow-slate-900/10 active:scale-95 flex items-center gap-1.5"
-                    >
+                    <button type="button" onclick="closeModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
+                    <button type="submit" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs rounded-xl transition-all shadow-md shadow-slate-900/10 active:scale-95 flex items-center gap-1.5">
                         <i data-lucide="check" class="w-3.5 h-3.5"></i>
                         <span>Save Material</span>
                     </button>
@@ -372,9 +243,7 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TOAST NOTIFICATION CONTAINER               -->
-    <!-- ========================================== -->
+    <!-- TOAST -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 hidden transform transition-all duration-300 translate-y-2 opacity-0">
         <div class="bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 text-xs font-medium border border-slate-800">
             <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
@@ -382,182 +251,226 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT LOGIC                           -->
-    <!-- ========================================== -->
-    <script>
-       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { 
-    getFirestore, collection, onSnapshot, addDoc, doc, updateDoc, deleteDoc 
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    <!-- FIREBASE MODULE SCRIPT -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { 
+            getFirestore, collection, onSnapshot, addDoc, doc, updateDoc, deleteDoc 
+        } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  // 1. Your Firebase Configuration (Paste yours here)
-  const firebaseConfig = {
-    apiKey: "AIzaSyCd1RK-oW7_CptdOIUIZ7qdNz7obBvhMSs",
-    authDomain: "bento-studyhub.firebaseapp.com",
-    projectId: "bento-studyhub",
-    storageBucket: "bento-studyhub.firebasestorage.app",
-    messagingSenderId: "502856617493",
-    appId: "1:502856617493:web:8b8b8f6ec6c9eacfcd881c",
-    measurementId: "G-XY54JD9CL1"
-  };
+        const firebaseConfig = {
+            apiKey: "AIzaSyCd1RK-oW7_CptdOIUIZ7qdNz7obBvhMSs",
+            authDomain: "bento-studyhub.firebaseapp.com",
+            projectId: "bento-studyhub",
+            storageBucket: "bento-studyhub.firebasestorage.app",
+            messagingSenderId: "502856617493",
+            appId: "1:502856617493:web:8b8b8f6ec6c9eacfcd881c",
+            measurementId: "G-XY54JD9CL1"
+        };
 
-  // 2. Initialize Firebase & Firestore
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  const materialsCol = collection(db, "materials");
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const materialsCol = collection(db, "materials");
 
-  let materials = [];
-  let currentUser = null;
-  let editingId = null;
+        let materials = [];
+        let currentSemester = 'All';
+        let currentCourse = 'All';
+        let searchQuery = '';
 
-  // Real-time listener: automatically syncs data across all devices/users
-  onSnapshot(materialsCol, (snapshot) => {
-    materials = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-    renderMaterials();
-  });
+        // Realtime Firestore Listener
+        onSnapshot(materialsCol, (snapshot) => {
+            materials = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+            populateDropdowns();
+            render();
+        }, (error) => {
+            console.error("Firestore error:", error);
+        });
 
-  // Authentication Logic
-  const loginForm = document.getElementById('loginForm');
-  const loginView = document.getElementById('loginView');
-  const mainView = document.getElementById('mainView');
-  const authNavBtn = document.getElementById('authNavBtn');
+        // Login Form Submission Listener
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const u = document.getElementById('login-username').value.trim();
+                const p = document.getElementById('login-password').value.trim();
+                const err = document.getElementById('login-error');
 
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const u = document.getElementById('username').value;
-    const p = document.getElementById('password').value;
-    if(u === 'admin' && p === 'admin') {
-      currentUser = 'admin';
-      loginView.classList.add('hidden');
-      mainView.classList.remove('hidden');
-      authNavBtn.textContent = 'Log Off';
-      renderMaterials();
-    } else {
-      alert('Invalid Credentials!');
-    }
-  });
+                if (u === 'admin' && p === 'admin') {
+                    err.classList.add('hidden');
+                    document.getElementById('login-view').classList.add('hidden');
+                    document.getElementById('app-view').classList.remove('hidden');
+                    showToast("Logged in successfully");
+                } else {
+                    err.classList.remove('hidden');
+                }
+            });
+        }
 
-  authNavBtn.addEventListener('click', () => {
-    if(currentUser) {
-      currentUser = null;
-      authNavBtn.textContent = 'Log In';
-      renderMaterials();
-    } else {
-      mainView.classList.add('hidden');
-      loginView.classList.remove('hidden');
-    }
-  });
+        // Material Form Submission Listener
+        const materialForm = document.getElementById('material-form');
+        if (materialForm) {
+            materialForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const id = document.getElementById('form-id').value;
+                const payload = {
+                    semester: document.getElementById('form-semester').value.trim(),
+                    code: document.getElementById('form-course-code').value.trim().toUpperCase(),
+                    name: document.getElementById('form-course-name').value.trim(),
+                    link: document.getElementById('form-link').value.trim()
+                };
 
-  // UI Rendering
-  const semFilter = document.getElementById('semFilter');
-  const courseFilter = document.getElementById('courseFilter');
-  const grid = document.getElementById('materialsGrid');
-  const adminControls = document.getElementById('adminControls');
+                try {
+                    if (id) {
+                        await updateDoc(doc(db, "materials", id), payload);
+                        showToast("Material updated!");
+                    } else {
+                        await addDoc(materialsCol, payload);
+                        showToast("Material added!");
+                    }
+                    closeModal();
+                } catch (err) {
+                    console.error(err);
+                    alert("Firebase Error: " + err.message);
+                }
+            });
+        }
 
-  semFilter.addEventListener('change', renderMaterials);
-  courseFilter.addEventListener('change', renderMaterials);
+        window.handleLogout = () => {
+            document.getElementById('app-view').classList.add('hidden');
+            document.getElementById('login-view').classList.remove('hidden');
+            document.getElementById('login-form').reset();
+            showToast("Logged off");
+        };
 
-  function renderMaterials() {
-    if(currentUser === 'admin') {
-      adminControls.classList.remove('hidden');
-    } else {
-      adminControls.classList.add('hidden');
-    }
+        window.openModal = (editId = null) => {
+            const modal = document.getElementById('material-modal');
+            const title = document.getElementById('modal-title');
+            const form = document.getElementById('material-form');
+            
+            if (editId) {
+                const item = materials.find(m => m.id === editId);
+                if(!item) return;
+                title.textContent = "Edit Study Material";
+                document.getElementById('form-id').value = item.id;
+                document.getElementById('form-semester').value = item.semester || '';
+                document.getElementById('form-course-code').value = item.code || '';
+                document.getElementById('form-course-name').value = item.name || '';
+                document.getElementById('form-link').value = item.link || '';
+            } else {
+                title.textContent = "Add Study Material";
+                form.reset();
+                document.getElementById('form-id').value = '';
+            }
+            modal.classList.remove('hidden');
+        };
 
-    const s = semFilter.value;
-    const c = courseFilter.value;
+        window.closeModal = () => {
+            document.getElementById('material-modal').classList.add('hidden');
+        };
 
-    const filtered = materials.filter(m => {
-      const matchSem = s === 'all' || m.semester === s;
-      const matchCourse = c === 'all' || m.course === c;
-      return matchSem && matchCourse;
-    });
+        window.deleteMaterial = async (id) => {
+            if(confirm("Are you sure you want to delete this link?")) {
+                try {
+                    await deleteDoc(doc(db, "materials", id));
+                    showToast("Material deleted");
+                } catch(err) {
+                    alert("Delete Error: " + err.message);
+                }
+            }
+        };
 
-    if(filtered.length === 0) {
-      grid.innerHTML = `<div class="bento-card col-span-12 text-center text-slate-400 py-12">No study materials found.</div>`;
-      return;
-    }
+        window.handleSemesterChange = (val) => { currentSemester = val; render(); };
+        window.handleCourseChange = (val) => { currentCourse = val; render(); };
+        window.handleSearch = (val) => { searchQuery = val.toLowerCase(); render(); };
 
-    grid.innerHTML = filtered.map(m => `
-      <div class="bento-card col-span-12 md:col-span-6 lg:col-span-4 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md border border-slate-200 dark:border-slate-700">${m.semester}</span>
-            <span class="text-xs font-mono font-medium text-slate-400">${m.code}</span>
-          </div>
-          <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">${m.name}</h3>
-          <p class="text-sm text-slate-500 mb-4">${m.course}</p>
-        </div>
-        
-        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-          <a href="${m.link}" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-            Open Drive Link ↗
-          </a>
-          ${currentUser === 'admin' ? `
-            <div class="flex gap-2">
-              <button onclick="window.editMaterial('${m.id}')" class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors">Edit</button>
-              <button onclick="window.deleteMaterial('${m.id}')" class="text-xs font-medium px-2 py-1 bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 hover:bg-red-100 rounded transition-colors">Delete</button>
-            </div>
-          ` : ''}
-        </div>
-      </div>
-    `).join('');
-  }
+        window.resetFilters = () => {
+            currentSemester = 'All';
+            currentCourse = 'All';
+            searchQuery = '';
+            document.getElementById('filter-semester').value = 'All';
+            document.getElementById('filter-course').value = 'All';
+            document.getElementById('search-input').value = '';
+            render();
+        };
 
-  // Modal & Firestore Operations
-  const modal = document.getElementById('materialModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const materialForm = document.getElementById('materialForm');
+        function populateDropdowns() {
+            const semSelect = document.getElementById('filter-semester');
+            const courseSelect = document.getElementById('filter-course');
 
-  document.getElementById('openAddModalBtn').addEventListener('click', () => {
-    editingId = null;
-    modalTitle.textContent = "Add New Study Material";
-    materialForm.reset();
-    modal.classList.remove('hidden');
-  });
+            const sems = ['All', ...new Set(materials.map(m => m.semester).filter(Boolean))];
+            const courses = ['All', ...new Set(materials.map(m => m.name).filter(Boolean))];
 
-  document.getElementById('closeModalBtn').addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
+            semSelect.innerHTML = sems.map(s => `<option value="${s}" ${s === currentSemester ? 'selected' : ''}>${s === 'All' ? 'All Semesters' : s}</option>`).join('');
+            courseSelect.innerHTML = courses.map(c => `<option value="${c}" ${c === currentCourse ? 'selected' : ''}>${c === 'All' ? 'All Courses' : c}</option>`).join('');
+        }
 
-  materialForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const payload = {
-      semester: document.getElementById('mSem').value,
-      course: document.getElementById('mCourse').value,
-      code: document.getElementById('mCode').value,
-      name: document.getElementById('mName').value,
-      link: document.getElementById('mLink').value
-    };
+        function render() {
+            document.getElementById('stat-total').textContent = materials.length;
+            document.getElementById('stat-semesters').textContent = new Set(materials.map(m => m.semester)).size;
+            document.getElementById('stat-courses').textContent = new Set(materials.map(m => m.name)).size;
 
-    if(editingId) {
-      await updateDoc(doc(db, "materials", editingId), payload);
-    } else {
-      await addDoc(materialsCol, payload);
-    }
+            const filtered = materials.filter(m => {
+                const matchSem = currentSemester === 'All' || m.semester === currentSemester;
+                const matchCourse = currentCourse === 'All' || m.name === currentCourse;
+                const matchQuery = !searchQuery || 
+                                   (m.name && m.name.toLowerCase().includes(searchQuery)) || 
+                                   (m.code && m.code.toLowerCase().includes(searchQuery)) ||
+                                   (m.semester && m.semester.toLowerCase().includes(searchQuery));
+                return matchSem && matchCourse && matchQuery;
+            });
 
-    modal.classList.add('hidden');
-  });
+            const grid = document.getElementById('materials-grid');
+            const empty = document.getElementById('empty-state');
+            document.getElementById('results-count').textContent = `Showing ${filtered.length} materials`;
 
-  window.editMaterial = (id) => {
-    const item = materials.find(m => m.id === id);
-    if(!item) return;
-    editingId = id;
-    modalTitle.textContent = "Edit Study Material";
-    document.getElementById('mSem').value = item.semester;
-    document.getElementById('mCourse').value = item.course;
-    document.getElementById('mCode').value = item.code;
-    document.getElementById('mName').value = item.name;
-    document.getElementById('mLink').value = item.link;
-    modal.classList.remove('hidden');
-  };
+            if(filtered.length === 0) {
+                grid.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
 
-  window.deleteMaterial = async (id) => {
-    if(confirm("Are you sure you want to delete this link?")) {
-      await deleteDoc(doc(db, "materials", id));
-    }
-  };
+            empty.classList.add('hidden');
+            grid.innerHTML = filtered.map(m => `
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200/60">${m.semester || 'N/A'}</span>
+                            <span class="text-xs font-mono font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">${m.code || ''}</span>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 group-hover:text-indigo-600 transition-colors mb-1">${m.name || 'Untitled Course'}</h3>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between">
+                        <a href="${m.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-indigo-600 transition-colors">
+                            <span>Open Drive Link</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <div class="flex items-center gap-1">
+                            <button onclick="openModal('${m.id}')" title="Edit" class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors">
+                                <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="deleteMaterial('${m.id}')" title="Delete" class="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            if (window.lucide) { window.lucide.createIcons(); }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.remove('opacity-0', 'translate-y-2'), 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3000);
+        }
+
+        if (window.lucide) { window.lucide.createIcons(); }
     </script>
 </body>
 </html>
